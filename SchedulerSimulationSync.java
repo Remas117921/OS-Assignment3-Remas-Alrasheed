@@ -8,6 +8,8 @@ import java.util.List;
 
 // ANSI Color Codes for enhanced terminal output
 class Colors {
+    private static final Semaphore cpuSemaphore = new Semaphore(1);
+
     private static final ReentrantLock lock = new ReentrantLock();
 
     public static final String RESET = "\u001B[0m";
@@ -110,6 +112,19 @@ class Process implements Runnable {
     
     @Override
     public void run() {
+        try {
+    cpuSemaphore.acquire(); 
+    try {
+        
+        System.out.println(Colors.CYAN + "Process " + id + " is executing on CPU" + Colors.RESET);
+        Thread.sleep(500); 
+    } finally {
+        cpuSemaphore.release(); 
+    }
+} catch (InterruptedException e) {
+    Thread.currentThread().interrupt();
+}
+
         // TODO #3: Acquire CPU semaphore before executing
         // This ensures only allowed number of processes run simultaneously
         
