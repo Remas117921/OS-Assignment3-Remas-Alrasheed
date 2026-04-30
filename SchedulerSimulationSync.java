@@ -8,6 +8,8 @@ import java.util.List;
 
 // ANSI Color Codes for enhanced terminal output
 class Colors {
+    private static final ReentrantLock lock = new ReentrantLock();
+
     public static final String RESET = "\u001B[0m";
     public static final String BOLD = "\u001B[1m";
     public static final String CYAN = "\u001B[36m";
@@ -38,15 +40,31 @@ class SharedResources {
     
     // TODO #1: Add a ReentrantLock(s) here to protect critical sections
     // Example: public static final ReentrantLock lock = new ReentrantLock();
+    lock.lock(); 
+try {
+    contextSwitchCount++; 
+    completedProcessCount++;
+    totalWaitingTime += waitingTime;
+} finally {
+    lock.unlock();  
+}
     
     // TODO #2: Add a Semaphore to limit concurrent process execution
     // Example: public static final Semaphore cpuSemaphore = new Semaphore(1);
-    
+    lock.lock(); 
+try {
+    executionLog.add("Process " + processId + " executed"); 
+} finally {
+    lock.unlock();
+}
+
+
     // Method to increment context switch counter
     public static void incrementContextSwitch() {
         // TODO: Protect this critical section with a lock
         // RACE CONDITION: Multiple threads might read and write simultaneously!
-        contextSwitchCount++;
+       
+
     }
     
     // Method to increment completed process counter
