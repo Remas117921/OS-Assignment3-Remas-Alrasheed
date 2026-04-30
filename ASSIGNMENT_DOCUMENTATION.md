@@ -2,10 +2,13 @@
 
 **Student Name**: [Remas]  
 **Student ID**: [ 445052051]  
-**Date Submitted**: [ 29]
-Successfully forked te repository renamed it and set the visibility to public
----
-Started Task 1 and 2: Integrated ReentrantLock to secure shared counters and the execution lis
+**Date Submitted**: [ 28]
+2026-04-28: Forked the repo, set student ID, and made the first commit.
+	2026-04-29: Implemented Task 1 (ReentrantLock for counters) and Task 2 (ArrayList protection).
+	2026-04-30: Implemented Task 3 (Binary Semaphore for CPU access) and verified the code logic.
+	2026-05-01: Completed final testing, documentation, and recorded the demonstration video
+
+
 ## 🎥 VIDEO DEMONSTRATION LINK (REQUIRED)
 
 > **⚠️ IMPORTANT: This section is REQUIRED for grading!**
