@@ -5,7 +5,7 @@
 **Date Submitted**: [ 29]
 Successfully forked te repository renamed it and set the visibility to public
 ---
-
+Started Task 1 and 2: Integrated ReentrantLock to secure shared counters and the execution lis
 ## 🎥 VIDEO DEMONSTRATION LINK (REQUIRED)
 
 > **⚠️ IMPORTANT: This section is REQUIRED for grading!**
